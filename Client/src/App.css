@@ -1,0 +1,27 @@
+/* Custom Styles */
+body {
+  background-color: #181818; /* Dark theme background */
+  color: #f0f0f0; /* Light text on dark background */
+}
+
+/* Code Editor Custom Styles */
+textarea {
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+}
+
+/* Review Section Custom Styles */
+pre {
+  background-color: #282c34; /* Dark background for preformatted text */
+  color: #dcdcdc; /* Light text on dark background */
+  padding: 1rem;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+/* Markdown Text in Review */
+.react-markdown {
+  color: #ffffff; /* White text for the review panel */
+}
+
+
