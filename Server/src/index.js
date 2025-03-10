@@ -6,7 +6,14 @@ const ServerConfig = require('./config/serverConfig');
 // const connectDB = require('./config/dbConfig');
 
 const app = express();
-app.use(cors());
+
+app.use(cors());app.use(cors({
+    origin: "*", // Replace with your client's origin for production
+    // origin: "http://localhost:5174", // Replace with your client's origin for localhost
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add the methods you need
+    credentials: true // Allow credentials (cookies, authorization headers, etc.)
+}));
+
 
 app.use(express.json());
 app.use(express.text());
