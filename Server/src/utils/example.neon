@@ -1,0 +1,33 @@
+f = 20
+t = 10
+x = 6
+if x > 5
+    print x
+else if x == 5
+    print t 
+else
+    print f
+endif
+
+for i in 0 to 5
+    x--
+endfor
+
+print x
+
+while x == 0
+    print x
+    x--
+endwhile
+
+shell "ls -la > output"
+
+alloc risersama 128
+insert risersama "baka"
+print risersama
+dealloc risersama
+
+
+open "nyaa.chan" as ecchi
+write ecchi "nyaa risersama"
+close ecchi
