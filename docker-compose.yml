@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  client:
+    build:
+      context: ./Client
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Client:/app
+      - /app/node_modules
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: ./Server
+    ports:
+      - "7600:7600"
+    volumes:
+      - ./Server:/app
+      - /app/node_modules
+    env_file:
+      - ./Server/.env
