@@ -7,9 +7,6 @@ services:
     image: jsonbrewer/smartlint-client
     ports:
       - "5173:5173"
-    volumes:
-      - ./Client:/app
-      - /app/node_modules
     depends_on:
       - server
 
@@ -19,8 +16,5 @@ services:
     image: jsonbrewer/smartlint-server
     ports:
       - "7600:7600"
-    volumes:
-      - ./Server:/app
-      - /app/node_modules
     env_file:
       - ./Server/.env
