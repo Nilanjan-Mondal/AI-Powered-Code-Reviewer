@@ -1,5 +1,5 @@
 # Dockerfile for building and serving a Vite static site
-FROM node
+FROM node:18-alpine AS builder
 WORKDIR /app
 
 COPY package*.json ./
