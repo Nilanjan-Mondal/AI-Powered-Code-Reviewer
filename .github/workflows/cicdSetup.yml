@@ -23,10 +23,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build images using Docker Compose
-        run: docker-compose build
+        run: docker compose build
 
       - name: Push images to Docker Hub
-        run: docker-compose push
+        run: docker compose push
 
       - name: Set up SSH key
         run: |
@@ -38,6 +38,6 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             cd ~/SmartLint
-            docker-compose pull
-            docker-compose up -d
+            docker compose pull
+            docker compose up -d
           EOF
