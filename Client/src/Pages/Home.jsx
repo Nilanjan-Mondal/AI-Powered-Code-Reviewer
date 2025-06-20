@@ -3,7 +3,7 @@ import { BaseUrl } from "../configs/clientConfig";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
-import "highlight.js/styles/github-dark.css"; // Syntax highlighting style
+import "highlight.js/styles/github-dark.css";
 
 function Home() {
   const [code, setCode] = useState("function sum() {\n  return 1 + 1;\n}");
