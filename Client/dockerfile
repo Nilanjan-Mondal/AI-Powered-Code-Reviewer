@@ -1,33 +1,13 @@
-# Dockerfile for building and serving a Vite static site
-FROM node:18-alpine AS builder
+# Client/Dockerfile
+FROM node
+
 WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build
 
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 5173
 
-CMD ["nginx", "-g", "daemon off;"]
-
-
-
-# Alternative Dockerfile for development
-
-# Client/Dockerfile
-# FROM node
-
-# WORKDIR /app
-
-# COPY package*.json ./
-# RUN npm install
-
-# COPY . .
-
-# EXPOSE 5173
-
-# CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev"]
