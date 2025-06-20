@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BaseUrl } from "../configs/clientConfig";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
@@ -13,7 +14,7 @@ function Home() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://ai-powered-code-reviewer-server.vercel.app/ai/get-review",
+        `${BaseUrl}/ai/get-review`,
         { code }
       );
       setReview(response.data);
