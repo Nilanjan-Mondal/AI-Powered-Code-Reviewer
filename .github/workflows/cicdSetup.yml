@@ -22,15 +22,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Write frontend .env file
-        run: |
-          echo "${{ secrets.CLIENT_ENV }}" | tr -d '\r' > ./Client/.env
-
       - name: Build client image
-        run: docker build -t jsonbrewer/smartlint-client ./Client
+        run: docker build -t jsonbrewer/smartlint-client ./Client --no-cache
 
       - name: Build server image
-        run: docker build -t jsonbrewer/smartlint-server ./Server
+        run: docker build -t jsonbrewer/smartlint-server ./Server --no-cache
 
       - name: Push client image
         run: docker push jsonbrewer/smartlint-client
