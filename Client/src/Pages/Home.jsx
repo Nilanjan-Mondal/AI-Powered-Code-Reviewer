@@ -6,7 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 
 function Home() {
-  const [code, setCode] = useState("function sum() {\n  return 1 + 1;\n}");
+  const [code, setCode] = useState("#include<iostream>\nint sum() {\n  return a + b;\n}");
   const [review, setReview] = useState("");
   const [loading, setLoading] = useState(false);
 
