@@ -22,17 +22,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Build client image
-        run: docker build -t jsonbrewer/smartlint-client ./Client --no-cache
-
-      - name: Build server image
-        run: docker build -t jsonbrewer/smartlint-server ./Server --no-cache
-
-      - name: Push client image
-        run: docker push jsonbrewer/smartlint-client
-
-      - name: Push server image
-        run: docker push jsonbrewer/smartlint-server
+      - name: Build and push Docker images
+        run: |
+          docker compose build --no-cache
+          docker compose push
 
       - name: Set up SSH key
         run: |
