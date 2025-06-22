@@ -344,11 +344,11 @@ const model = genAI.getGenerativeModel({
         ✔️ Detect any programming language dynamically.
         ✔️ Provide accurate syntax & logic checks.
         ✔️ Suggest real optimizations based on best practices.
-        ✔️ Make code review engaging and helpful.
+        ✔️ Make code review engaging and helpful..
     
     `
 
-    
+
 });
 
 
